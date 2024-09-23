@@ -1,6 +1,6 @@
 package br.com.sinerji.model;
 
-public class Funcionario {
+public abstract class Funcionario {
     protected String nome;
     protected String cargo;
     protected int anoCntratacao;
@@ -12,6 +12,8 @@ public class Funcionario {
         this.anoCntratacao = anoCntratacao;
         this.salarioBase = salarioBase;
     }
+    public abstract double calcularSalario(int ano, int mes);
+    public abstract double calcularBeneficios(int ano, int mes);
 
     public String getNome() {
         return nome;
