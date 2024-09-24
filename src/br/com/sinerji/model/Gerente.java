@@ -30,8 +30,8 @@ public class Gerente extends Funcionario {
     }
 
     @Override
-    public double calcularBeneficio(int ano) {
-        return 0; // Gerente não tem benefício fixo além do salário e comissão sobre vendas
+    public double calcularBeneficio(int ano, int mes) {
+        return 0; // Gerente não tem benefício fixo além da comissão sobre vendas
     }
 }
 

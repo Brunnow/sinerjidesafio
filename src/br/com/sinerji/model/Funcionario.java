@@ -13,6 +13,9 @@ public abstract class Funcionario {
         return nome;
     }
 
+
     public abstract double calcularSalario(int ano, int mes);
-    public abstract double calcularBeneficio(int ano);
+
+
+    public abstract double calcularBeneficio(int ano, int mes);
 }

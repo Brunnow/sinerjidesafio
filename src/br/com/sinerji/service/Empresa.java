@@ -12,17 +12,16 @@ public class Empresa {
         this.funcionarios = funcionarios;
     }
 
-    // 1. Total pago (salário e benefícios) no mês
+    // 1. Total pago (salário e benefícios) no mês e ano
     public double calcularTotalPago(int ano, int mes) {
         double total = 0.0;
         for (Funcionario f : funcionarios) {
-            // Inclui salário e benefício
-            total += f.calcularSalario(ano, mes) + f.calcularBeneficio(ano);
+            total += f.calcularSalario(ano, mes) + f.calcularBeneficio(ano, mes);
         }
         return total;
     }
 
-    // 2. Total pago somente em salários no mês
+    // 2. Total pago somente em salários no mês e ano
     public double calcularTotalSalarios(int ano, int mes) {
         double totalSalarios = 0.0;
         for (Funcionario f : funcionarios) {
@@ -31,16 +30,16 @@ public class Empresa {
         return totalSalarios;
     }
 
-    // 3. Total pago somente em benefícios no ano
-    public double calcularTotalBeneficios(int ano) {
+    // 3. Total pago somente em benefícios no mês e ano
+    public double calcularTotalBeneficios(int ano, int mes) {
         double totalBeneficios = 0.0;
         for (Funcionario f : funcionarios) {
-            totalBeneficios += f.calcularBeneficio(ano);
+            totalBeneficios += f.calcularBeneficio(ano, mes);
         }
         return totalBeneficios;
     }
 
-    // 4. Funcionário com maior salário no mês
+    // 4. Funcionário com maior salário no mês e ano
     public Funcionario calcularMaiorSalario(int ano, int mes) {
         Funcionario maior = null;
         double maiorSalario = 0.0;
@@ -56,13 +55,13 @@ public class Empresa {
         return maior;
     }
 
-    // 5. Funcionário que recebeu o maior benefício
-    public Funcionario calcularMaiorBeneficio(int ano) {
+    // 5. Funcionário que recebeu o maior benefício no mês e ano
+    public Funcionario calcularMaiorBeneficio(int ano, int mes) {
         Funcionario maiorBeneficiado = null;
         double maiorBeneficio = 0.0;
 
         for (Funcionario f : funcionarios) {
-            double beneficio = f.calcularBeneficio(ano);
+            double beneficio = f.calcularBeneficio(ano, mes);
             if (beneficio > maiorBeneficio) {
                 maiorBeneficio = beneficio;
                 maiorBeneficiado = f;
@@ -72,7 +71,7 @@ public class Empresa {
         return maiorBeneficiado;
     }
 
-    // 6. Vendedor que mais vendeu no mês
+    // 6. Vendedor que mais vendeu no mês e ano
     public Vendedor vendedorComMaisVendas(int ano, int mes) {
         Vendedor melhorVendedor = null;
         double maiorVenda = 0.0;

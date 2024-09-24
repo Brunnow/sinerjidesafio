@@ -30,7 +30,7 @@ public class Vendedor extends Funcionario {
     }
 
     @Override
-    public double calcularBeneficio(int ano) {
+    public double calcularBeneficio(int ano, int mes) {
         int anosTrabalhados = ano - anoContratacao;
         return anosTrabalhados * 1800;
     }
