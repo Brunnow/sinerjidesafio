@@ -2,28 +2,17 @@ package br.com.sinerji.model;
 
 public abstract class Funcionario {
     protected String nome;
-    protected String cargo;
-    protected int anoCntratacao;
-    protected double salarioBase;
+    protected int anoContratacao;
 
-    public Funcionario(String nome, String cargo, int anoCntratacao, double salarioBase) {
+    public Funcionario(String nome, int anoContratacao) {
         this.nome = nome;
-        this.cargo = cargo;
-        this.anoCntratacao = anoCntratacao;
-        this.salarioBase = salarioBase;
+        this.anoContratacao = anoContratacao;
     }
-    public abstract double calcularSalario(int ano, int mes);
-    public abstract double calcularBeneficios(int ano, int mes);
 
     public String getNome() {
         return nome;
     }
 
-    public String getCargo() {
-        return cargo;
-    }
-
-    public double getSalarioBase() {
-        return salarioBase;
-    }
+    public abstract double calcularSalario(int ano, int mes);
+    public abstract double calcularBeneficio(int ano);
 }
